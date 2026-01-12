@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: myuser-management-ms
+
+  datasource:
+    url: "jdbc:mysql://localhost:3306/databasename"
+    username: "defaultuser"
+    password: "defaultpass"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db-changelog.yaml
+
+server:
+  port: 8080
+  servlet:
+    context-path: /user-management-ms
